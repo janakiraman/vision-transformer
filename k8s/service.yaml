@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vit-api
+spec:
+  type: LoadBalancer   # use ClusterIP if exposing via Ingress instead
+  selector:
+    app: vit-api
+  ports:
+    - port: 80
+      targetPort: 8000
+      protocol: TCP
